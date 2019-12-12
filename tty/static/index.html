@@ -1,76 +1,9 @@
+<!doctype html>
 <title>tty.js</title>
-<link rel='stylesheet' href='style.css'>
-<script src='socket.io/socket.io.js'></script>
-<script src='term.js'></script>
-<script src='options.js'></script>
-<script src='tty.js'></script>
-<script>
-  window.theme = {
-    setDark: () => {
-      document.querySelector('.window').style.backgroundColor = '#333'
-      document.querySelector('.terminal').style.backgroundColor = '#333'
-      document.querySelector('.terminal').style.border = '#333 solid 5px'
-      Array.from(document.querySelectorAll('.terminal div')).map(_item => {
-        _item.style.color = '#eee'
-      })
-      document.querySelector('.reverse-video').style.color = '#000'
-      document.querySelector('.reverse-video').style.background = '#f0f0f0'
-    },
-    setLight:() => {
-      document.querySelector('.window').style.backgroundColor = '#eee'
-      document.querySelector('.terminal').style.backgroundColor = '#eee'
-      document.querySelector('.terminal').style.border = '#eee solid 5px'
-      Array.from(document.querySelectorAll('.terminal div')).map(_item => {
-        _item.style.color = '#333'
-      })
-      document.querySelector('.reverse-video').style.color = '#eee'
-      document.querySelector('.reverse-video').style.background = '#333'
-    }
-  }
-  window.onload = () => {
-    setTimeout(() => {
-      window.tty = new window.tty.Window()
-      window.tty.maximize()
-      window.theme.setDark()
-      setTimeout(()=>{
-        let myEvent = new Event('resize');
-        window.dispatchEvent(myEvent);
-      },100)
-    }, 1000)
-    window.addEventListener('message', function (event) {
-      if (event.data === 'vs-light') {
-        window.theme.setLight()
-      } else {
-        window.theme.setDark()
-      }
-    }, false)
-  }
-</script>
-<style>
-  body {
-    background: #333 !important;
-    height: 100vh;
-    padding: 0;
-    margin: 0;
-  }
-  .bar {
-    display: none
-  }
-  .terminal {
-    background: #333;
-    border: #333 solid 5px;
-    height: 100%;
-  }
-  div {
-    font-size: 12px;
-    font-family: monaco;
-  }
-  .window {
-    background: #333;
-    padding-top: 0;
-    border: 0;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-  }
-</style>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="user.css">
+<script src="socket.io/socket.io.js"></script>
+<script src="term.js"></script>
+<script src="options.js"></script>
+<script src="tty.js"></script>
+<script src="user.js"></script>
