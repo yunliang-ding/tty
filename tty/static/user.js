@@ -1,8 +1,8 @@
 window.onload = () => {
   setTimeout(() => {
     window.tty = new window.tty.Window()
-    window.tty.maximize()
-    window.theme.setDark()
+    // window.tty.maximize()
+    window.theme.setLight()
     setTimeout(()=>{
       let myEvent = new Event('resize');
       window.dispatchEvent(myEvent);
@@ -18,9 +18,9 @@ window.onload = () => {
 }
 window.theme = {
   setDark: () => {
-    document.querySelector('.window').style.backgroundColor = '#333'
-    document.querySelector('.terminal').style.backgroundColor = '#333'
-    document.querySelector('.terminal').style.border = '#333 solid 5px'
+    document.querySelector('.window').style.backgroundColor = '#1e1e1e'
+    document.querySelector('.terminal').style.backgroundColor = '#1e1e1e'
+    document.querySelector('.terminal').style.border = '#1e1e1e solid 5px'
     Array.from(document.querySelectorAll('.terminal div')).map(_item => {
       _item.style.color = '#eee'
     })

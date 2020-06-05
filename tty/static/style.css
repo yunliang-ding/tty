@@ -1,66 +1,29 @@
-/**
- * style.css (https://github.com/chjj/tty.js)
- * Copyright (c) 2012-2013, Christopher Jeffrey (MIT License)
- */
-::-webkit-scrollbar {/*滚动条整体样式*/
-  width: 16px;     /*高宽分别对应横竖滚动条的尺寸*/
-  height: 16px;
-}
-::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
-    border-radius: 0;
-    background: rgb(124, 123, 123);
-}
-::-webkit-scrollbar-track {/*滚动条里面轨道*/
-  border-radius: 0;
-  background: rgba(94, 92, 92, 0.1);
-}
-html, body {
+html, body, div {
   margin: 0;
   padding: 0;
-}
-
-div {
   border: 0;
-  padding: 0;
-  margin: 0;
+  font-family:monaco;
 }
-
 html {
-  background: #333;
+  background: #1e1e1e;
   color:#aaa;
 }
-
-html.dark {
-  background: #333;
-}
-
 html.maximized {
   overflow: hidden;
 }
-
 body {
-  margin: 25px;
+  width:100vw;
+  height:100vh;
+  overflow: hidden;
 }
-
-/* Only allow plaintext?
-[contenteditable=""],
-[contenteditable="true"] {
-  -webkit-user-modify: read-write-plaintext-only !important;
-}
-*/
 
 /**
  * Terminal
- */
-
+*/
 .window {
-  padding-top: 15px;
-  background: #272829;
-  position: absolute;
-  top: 20px;
-  left: 20px;
+  width:100vw;
+  height:100vh;
   z-index: 1000;
-  box-shadow: rgba(0, 0, 0, 0.8) 2px 2px 20px;
 }
 
 .maximized .window {
@@ -115,17 +78,14 @@ body {
   background: transparent;
 }
 
-.grip:hover {
-}
-
 .terminal {
-  border: #000 solid 5px;
+  border:0 !important;
   font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
   font-size: 11px;
   color: #f0f0f0;
   background: #000;
   position: relative;
-  top: -20px;
+  top: 0;
   overflow: auto;
 }
 
@@ -140,7 +100,7 @@ body {
 
 h1 {
   font: 20px/1.5 sans-serif;
-  background: #333;
+  background: #1e1e1e;
   margin: -25px -25px 0 -25px;
   height: 30px;
   padding: 10px 25px;

@@ -17,7 +17,7 @@ var app = tty.createServer({
   debug: false,
   term: {
     termName: 'xterm',
-    geometry: [80, 24],
+    geometry: [110, 40],
     scrollback: 1000,
     visualBell: false,
     popOnBell: false,
