@@ -2,7 +2,7 @@ window.onload = () => {
   setTimeout(() => {
     window.tty = new window.tty.Window()
     // window.tty.maximize()
-    window.theme.setLight()
+    window.theme.setDark()
     setTimeout(()=>{
       let myEvent = new Event('resize');
       window.dispatchEvent(myEvent);
